@@ -40,6 +40,7 @@ CcAutoWash In 10s..
 - Batch file support.
 - Temp/Tmp folders on a RamDisk loaded from image.
 - RamDisk software.
+- Programs non-native to Windows, that dont run well.
 
 ### NOTATION
 - If you are looking for RamDisk software, then I can suggest [ImDisk](https://github.com/LTRData/ImDisk) for a free one limited to one drive.
