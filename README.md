@@ -12,7 +12,7 @@ RamDisks will always be cut fine, as they need not eat system ram, obviously thi
 Script Initialized...
 
 
-CcAutoWash In 10 Seconds..
+CcAutoWash In 10s..
 ..Executing CCleaner..
 ..Cleaning Complete.
 
