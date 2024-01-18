@@ -13,8 +13,8 @@ echo.
 
 :: Environment Setup
 echo Setting Temporary Dirs..
-SET TMP=SsdDrive:\TempLocation
-SET TEMP=SsdDrive:\TempLocation
+SET TMP=SsdDrive:\TempLocation  <--- SET TMP LOCATION
+SET TEMP=SsdDrive:\TempLocation  <--- SET TEMP LOCATION
 echo ..Temporary Directories Set.
 echo.
 timeout /t 1 /nobreak >nul
@@ -30,5 +30,5 @@ timeout /t 1 /nobreak >nul
 :: Script Exit
 echo.
 echo ...Script Complete.
-PAUSE
+timeout /t 5 /nobreak >nul
 exit
