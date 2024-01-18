@@ -12,7 +12,7 @@ echo.
 echo.
 
 :: Introduction
-echo CcAutoWash In 10 Seconds..
+echo CcAutoWash In 10s..
 timeout /t 10 /nobreak >nul
 
 :: Start Cleaning
