@@ -24,7 +24,7 @@ CcAutoWash In 10 Seconds..
 ## INSTRUCTION
 1. Put batch into same dir as `CCleaner64.exe`.
 2. Create a shortcut to it in `C:\Users\(YourUserName)\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
-3. Restart computer, no errors, great.
+3. Restart computer, no errors is good.
 
 ### REQUIREMENTS
 - CCleaner (64bit).
