@@ -11,6 +11,7 @@ Some scripts to assist with running Temp/Tmp directories from RamDisk on Windows
 4. Regardless of the program, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even loading from mSATA, it was about 6144MB (4096 + 2048), 4096MB is a safe value.
 
 ### PREVIEW
+CcAutoWash.Bat, doing its thing...
 ```
 
 Script Initialized...
@@ -24,6 +25,29 @@ CcAutoWash In 10s..
 ...Script Complete.
 
 ```
+TempEnviRun.Bat, For example, PACT will now load...
+```
+
+Script Initialized...
+
+
+Setting Temporary Dirs..
+..Temporary Directories Set.
+
+Launching Target Program..
+...Executing PACT_Interface.exe...
+Hello World! | Plugin Auto Cleaning Tool (PACT) | Version 1.75 | FNV, FO4, SSE
+MAKE SURE TO SET THE CORRECT LOAD ORDER AND XEDIT PATHS BEFORE CLEANING PLUGINS
+===============================================================================
+-----
+SET YOUR LOAD ORDER FILE AND XEDIT EXECUTABLE TO ENABLE CLEANING
+     (MOD ORGANIZER 2 USERS ALSO NEED TO SET MO2 EXECUTABLE)
+
+PRESS 'START CLEANING' BUTTON TO CLEAN ALL ACTIVE GAME PLUGINS
+(IF REQUIRED FILES ARE SET, IT WILL ENABLE ITSELF IN 3 SECONDS)
+-----
+```
+
 
 ## INSTRUCTION
 - For `CcAutoWash.Bat`
