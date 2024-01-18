@@ -21,7 +21,6 @@ timeout /t 1 /nobreak >nul
 
 :: Running Executable
 echo Launching Target Program..
-echo ...Executing PACT_Interface.exe...
 rem "%scriptDir%TargetApplication.exe"  <--- ONE OF THESE LINES
 rem python "%scriptDir%YourPythonScript.py"  <--- ONE OF THESE LINES
 echo ..Execution Complete.
