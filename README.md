@@ -32,7 +32,7 @@ CcAutoWash In 10 Seconds..
 - RamDisk software.
 
 ## NOTATION
-- If you are looking for RamDisk software, then I can suggest (ImDisk)[https://github.com/LTRData/ImDisk] for a free one, however, regardless of the program, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even loading from mSATA. 
+- If you are looking for RamDisk software, then I can suggest [ImDisk](https://github.com/LTRData/ImDisk) for a free one, however, regardless of the program, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even loading from mSATA. 
  
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
