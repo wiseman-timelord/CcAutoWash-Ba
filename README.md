@@ -1,7 +1,7 @@
 # RamDiskTempHelp-Ba
 
 ### STATUS: WORKING
-Pretty much as good as it needs to be, few minor refinements may come.
+The scripts work, if I get any ideas, there may be more.
 
 ## DESCRIPTION
 Some scripts to assist with running Temp/Tmp directories from RamDisk on Windows, and some tips in the NOTATION below. 
