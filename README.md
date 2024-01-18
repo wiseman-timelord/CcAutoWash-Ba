@@ -24,9 +24,14 @@ CcAutoWash In 10s..
 ```
 
 ## INSTRUCTION
+- For `CcAutoWash.Bat`
 1. Put batch into same dir as `CCleaner64.exe`.
 2. Create a shortcut to it in `C:\Users\(YourUserName)\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`.
 3. Restart computer, no errors is good.
+- For `TempEnviRun.Bat`
+1. Put in same dir as target program.
+2. Edit appropriate highlighted lines in script.
+3. Run script, program runs.
 
 ### REQUIREMENTS
 - CCleaner (64bit).
