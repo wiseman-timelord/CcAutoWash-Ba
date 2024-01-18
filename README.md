@@ -33,7 +33,8 @@ CcAutoWash In 10 Seconds..
 - RamDisk software.
 
 ### NOTATION
-- If you are looking for RamDisk software, then I can suggest [ImDisk](https://github.com/LTRData/ImDisk) for a free one limited to one drive, however, regardless of the program, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even loading from mSATA, it was about 6144MB (4096 + 2048), 4096MB was a safe value. 
+- If you are looking for RamDisk software, then I can suggest [ImDisk](https://github.com/LTRData/ImDisk) for a free one limited to one drive, however, regardless of the program, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even loading from mSATA, it was about 6144MB (4096 + 2048), 4096MB was a safe value.
+- To avoid issues with running out of space when copying files on windows, then use [TetraCopy](https://www.codesector.com/teracopy), as it does direct copies through memory, instead of using the temp folder. After doing this, the only issues I have had is with using PACT to auto clean my Fallout 4 mods.  
 - I tried to do some complicated method of stats going through TEMP/TMP path, as no way of knowing pre-defined RamDisk letter, but, ran into path lengh issues, so kept it simple.
  
 
