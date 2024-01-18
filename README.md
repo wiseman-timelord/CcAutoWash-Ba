@@ -4,7 +4,7 @@
 Pretty much as good as it needs to be, few minor refinements may come.
 
 ## DESCRIPTION
-RamDisks will always be cut fine, as they need not eat system ram, obviously this is intended for people whom put their, TEMP and TMP, on a RamDisk, and are intending to have their computer on for a while. To clean a ramdisk, this requires a certain delay after the user logon, in order to process the cleaning, yes I'm sure task manager can delay it, but, its good to have it a little longer and I want it running from the start menu, the start menu is the last location it checks, and the user is required to logon. This clearly is a simple idea, but, that is the point, I am presenting an idea to enhance RamDisk optimization, and its, comically named `AutoWash` after `Fifth Element` and done in the style of my newer batch files.
+RamDisks will always be cut fine, as they need not eat system ram, obviously this is intended for people whom put their, TEMP and TMP, on a RamDisk loaded from image, and are intending to have their computer on for longer periods. To clean a ramdisk, this requires a certain delay after the user logon, in order to process the cleaning, yes I'm sure task manager can delay it, but, its good to have it a little longer and I want it running from the start menu, the start menu is the last location it checks, and the user is required to logon. This clearly is a simple idea, but, that is the point, I am presenting an idea to enhance RamDisk optimization where the space is limited, and its, comically named `AutoWash` after `Fifth Element` and done in the style of my newer batch files.
 
 ### PREVIEW
 ```
