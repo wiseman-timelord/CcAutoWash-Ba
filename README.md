@@ -4,7 +4,9 @@
 Pretty much as good as it needs to be, few minor refinements may come.
 
 ## DESCRIPTION
-RamDisks will always be cut fine, as they need not eat system ram, obviously this is intended for people whom put their, TEMP and TMP, on a RamDisk loaded from image, and are intending to have their computer on for longer periods. To clean a ramdisk, this requires a certain delay after the user logon, in order to process the cleaning, yes I'm sure task manager can delay it, but, its good to have it a little longer and I want it running from the start menu, the start menu is the last location it checks, and the user is required to logon. This clearly is a simple idea, but, that is the point, I am presenting an idea to enhance RamDisk optimization where the space is limited, and its, comically named `AutoWash` after `Fifth Element` and done in the style of my newer batch files.
+Some scripts to assist with running Temp/Tmp directories from RamDisk on Windows, and some tips in the NOTATION below. 
+1. `CcAutoWash.Bat` - RamDisks will always be cut fine, as they need not eat system ram, obviously this is intended for people whom put their, TEMP and TMP, on a RamDisk loaded from image, and are intending to have their computer on for longer periods. To clean a ramdisk, this requires a certain delay after the user logon, in order to process the cleaning, yes I'm sure task manager can delay it, but, its good to have it a little longer and I want it running from the start menu, the start menu is the last location it checks, and the user is required to logon.
+2. `TempEnviRun.Bat` - After using [TetraCopy](https://www.codesector.com/teracopy), to copy files directly through memory instead of using cache, the only issues were with using python, and there is apparently no general way to specify the cache location used by libraries "GPT: Many Python libraries use the OS temporary dir for caching. This is often hardcoded into the library.", however, it is possible in an environment "GPT:  Set the TMPDIR, TEMP, or TMP environment variables within the activation script of the virtual environment. export TEMP=/path/to/your/temp", this would then point to a temp location on your ssd drive. Thus, with a little editing of `TempEnviRun.Bat`, you too can still do things like run PACT on your Fallout 4 mods.  
 
 ### PREVIEW
 ```
@@ -34,7 +36,6 @@ CcAutoWash In 10s..
 
 ### NOTATION
 - If you are looking for RamDisk software, then I can suggest [ImDisk](https://github.com/LTRData/ImDisk) for a free one limited to one drive, however, regardless of the program, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even loading from mSATA, it was about 6144MB (4096 + 2048), 4096MB was a safe value.
-- To avoid issues with running out of space when copying files on windows, then use [TetraCopy](https://www.codesector.com/teracopy), as it does direct copies through memory, instead of using the temp folder.  
 - I tried to do some complicated method of stats going through TEMP/TMP path, as no way of knowing pre-defined RamDisk letter, but, ran into path lengh issues, so kept it simple.
  
 
