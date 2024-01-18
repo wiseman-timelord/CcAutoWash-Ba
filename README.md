@@ -28,7 +28,7 @@ CcAutoWash In 10 Seconds..
 ### REQUIREMENTS
 - CCleaner (64bit).
 - Batch file support.
-- Temp/Tmp folders on a RamDisk.
+- Temp/Tmp folders on a RamDisk loaded from image.
 - RamDisk software.
 
 ## NOTATION
