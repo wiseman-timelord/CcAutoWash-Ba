@@ -2,7 +2,7 @@
 
 :: Initialization
 mode 45,19
-color 0A
+color 80
 title FireDriveRunner
 cls
 cd /d "%~dp0"
