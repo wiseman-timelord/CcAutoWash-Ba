@@ -29,7 +29,7 @@ echo.
 echo Checking Target Application..
 if exist ".\TargetApplication.exe" (  <--- EDIT THIS LINE
 	echo ..Target Application Present.
-    echo Executing, Do Not Close Window..
+    echo Executing, Do Not Close..
 	".\TargetApplication.exe"  <--- EDIT THIS LINE
     echo ..Target Application Exited!
 ) else (
