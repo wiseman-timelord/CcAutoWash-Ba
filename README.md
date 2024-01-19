@@ -93,6 +93,7 @@ UnMounting RAM Drive..
 
 ### NOTATION
 - I tried to do some complicated method of stats going through TEMP/TMP path, as no way of knowing pre-defined RamDisk letter, but, ran into path lengh issues, so kept it simple.
- 
+- Again, if you want to create a shortcut to the batch, then have the shortcut on the taskbar, then you need to use cmd.exe /k "<your-command>" in the target box of the shortcut.
+  
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
