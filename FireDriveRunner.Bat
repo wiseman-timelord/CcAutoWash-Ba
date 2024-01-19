@@ -25,15 +25,15 @@ if "%ERRORLEVEL%"=="0" (
 timeout /t 1 /nobreak > NUL
 echo.
 
-:: Run Firestorm
-echo Launching Firestorm...
-if exist ".\Firestorm-Releasex64.exe" (
+:: Run Target Application
+echo Launching Target Application...
+if exist ".\TargetApplication.exe" (  <--- EDIT THIS LINE
 	echo ...Do Not Close Window...
-    echo ...Executing Firestorm...
-	".\Firestorm-Releasex64.exe"
-    echo ...Firestorm Exited!
+    echo ...Executing Target Application...
+	".\TargetApplication.exe"  <--- EDIT THIS LINE
+    echo ...Target Application Exited!
 ) else (
-    echo ...Firestorm Missing!
+    echo ...Target Application Missing!
     echo ...Set Correct Location/ExeName.
 	timeout /t 3 /nobreak > NUL
     goto unmount
