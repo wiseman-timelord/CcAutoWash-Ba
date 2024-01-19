@@ -1,7 +1,7 @@
 @echo off
 
 :: Initialization
-mode 45,17
+mode 45,19
 color 0A
 title FireDriveRunner
 cls
