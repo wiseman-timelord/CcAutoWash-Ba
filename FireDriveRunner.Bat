@@ -14,7 +14,7 @@ timeout /t 1 /nobreak > NUL
 :: Mount RAM Drive
 echo.
 echo Mounting RAM Drive...
-"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /mount:S
+"Drive:\RamDiskSoftwareLocation\RamDiskExecutable" OPTIONS (possibly ramdisk.exe /mount:S)  <--- EDIT THIS LINE
 if "%ERRORLEVEL%"=="0" (
     echo ...RAM Drive Mounted.
 ) else (
@@ -45,7 +45,7 @@ timeout /t 1 /nobreak > NUL
 :unmount
 echo.
 echo UnMounting RAM Drive...
-"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /unmount:S
+"Drive:\RamDiskSoftwareLocation\RamDiskExecutable" OPTIONS (possibly ramdisk.exe /unmount:S)  <--- EDIT THIS LINE
 if "%ERRORLEVEL%"=="0" (
     echo ...RAM Drive UnMounted.
 ) else (
