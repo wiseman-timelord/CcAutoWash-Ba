@@ -32,17 +32,17 @@ if exist ".\TargetApplication.exe" (  <--- EDIT THIS LINE
     echo Executing, Do Not Close..
 	".\TargetApplication.exe"  <--- EDIT THIS LINE
     echo ..Target Application Exited!
+    echo.
 ) else (
     echo ..Missing! Set Location/ExeName.
+        echo.
 	timeout /t 3 /nobreak > NUL
     goto unmount
 )
-echo.
 timeout /t 1 /nobreak > NUL
 
 :: Unmount RAM Drive
 :unmount
-echo.
 echo UnMounting RAM Drive..
 "Drive:\RamDiskSoftwareLocation\RamDiskExecutable" OPTIONS - possibly ramdisk.exe /unmount:S  <--- EDIT THIS LINE
 if "%ERRORLEVEL%"=="0" (
