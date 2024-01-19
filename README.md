@@ -57,7 +57,7 @@ Script Initialized...
 Mounting RAM Drive..
 ..RAM Drive Mounted.
 
-Executing Target Application (Do Not Close Window)..
+Executing, Do Not Close..
 ..Target Application Exited!
 
 
