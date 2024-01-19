@@ -12,7 +12,7 @@ Some scripts to assist with running Temp/Tmp directories from RamDisk on Windows
 5. Regardless of the program, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even loading from mSATA, it was about 6144MB (4096 + 2048), 4096MB is a safe value. If you are looking for RamDisk software, then I can suggest [ImDisk](https://github.com/LTRData/ImDisk) for a free one limited to one drive.
 
 ### PREVIEW
-CcAutoWash.Bat, doing its thing...
+- CcAutoWash.Bat, doing its thing...
 ```
 
 Script Initialized...
@@ -26,7 +26,7 @@ CcAutoWash In 10s..
 ...Script Complete.
 
 ```
-TempEnviRun.Bat, For example, PACT will now not, use up the RamDisk and quit early...
+- TempEnviRun.Bat, For example, PACT will now not, use up the RamDisk and quit early...
 ```
 
 Script Initialized...
@@ -47,6 +47,26 @@ SET YOUR LOAD ORDER FILE AND XEDIT EXECUTABLE TO ENABLE CLEANING
 PRESS 'START CLEANING' BUTTON TO CLEAN ALL ACTIVE GAME PLUGINS
 (IF REQUIRED FILES ARE SET, IT WILL ENABLE ITSELF IN 3 SECONDS)
 -----
+```
+- FireDriveRunner.Bat, For example, PACT will now not, use up the RamDisk and quit early...
+```
+
+Script Initialized...
+
+
+Mounting RAM Drive..
+..RAM Drive Mounted.
+
+Executing Target Application (Do Not Close Window)..
+..Target Application Exited!
+
+
+UnMounting RAM Drive..
+..RAM Drive UnMounted.
+
+
+...Processes Complete.
+
 ```
 
 ## INSTRUCTION
