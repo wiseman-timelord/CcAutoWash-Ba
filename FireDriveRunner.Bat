@@ -29,11 +29,11 @@ echo.
 echo Checking Target Application..
 if exist ".\TargetApplication.exe" (  <--- EDIT THIS LINE
 	echo ..Target Application Present.
-    echo Executing Target Application.. (Do Not Close Window)
+    echo Executing, Do Not Close Window..
 	".\TargetApplication.exe"  <--- EDIT THIS LINE
     echo ..Target Application Exited!
 ) else (
-    echo ..Target Application Missing! (Set Location/ExeName)
+    echo ..Missing! Set Location/ExeName.
 	timeout /t 3 /nobreak > NUL
     goto unmount
 )
