@@ -61,7 +61,7 @@ Checking Viewers...
 ..Genesis Present..
 ..Executing Genesis..
 (Don't Close This Window)
-..Genesis Exited
+..Genesis Exited.
 
 Checking Explorer..
 ..Explorer Closed.
