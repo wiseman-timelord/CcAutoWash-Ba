@@ -1,7 +1,7 @@
 @echo off
 
 :: Initialization - Possibly Customize Title For Viewers Used
-mode 45,18
+mode 45,21
 color 80
 title FireGenRam-Runner
 cls
@@ -26,25 +26,24 @@ timeout /t 1 /nobreak > NUL
 echo.
 
 :: Run Viewer - Customize Executables/Prints For Viewers Used
-echo Checking Viewer...
+echo Checking Viewers...
 if exist ".\GenesisViewer.exe" (
-    echo ..Genesis Present.
-    echo Executing, Do Not Close..
+    echo ..Genesis Present..
+    echo ..Executing, Don't Close..
     ".\GenesisViewer.exe"
     echo ..Genesis Exited!
-    timeout /t 3 /nobreak > NUL
+    timeout /t 2 /nobreak > NUL
     echo.
 ) else (
-    echo ..Genesis Missing! Checking for Firestorm.
     if exist ".\Firestorm-Releasex64.exe" (
-        echo ..Firestorm Present.
-        echo Executing, Do Not Close..
+        echo ..Firestorm Present..
+        echo ..Executing, Don't Close..
         ".\Firestorm-Releasex64.exe"
         echo ..Firestorm Exited!
-        timeout /t 3 /nobreak > NUL
+        timeout /t 2 /nobreak > NUL
         echo.
     ) else (
-        echo ..Firestorm Missing! Set Location/ExeName.
+        echo ..Firestorm & Genesis, Missing!
         echo.
         timeout /t 3 /nobreak > NUL
         goto unmount
