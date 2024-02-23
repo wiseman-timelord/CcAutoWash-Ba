@@ -50,7 +50,6 @@ PRESS 'START CLEANING' BUTTON TO CLEAN ALL ACTIVE GAME PLUGINS
 ```
 - `FireGenRam-Runner.Bat`, Auto-mount/unmount application specific ramdrive...
 ```
-
 Script Initialized...
 
 
@@ -59,17 +58,15 @@ Mounting RAM Drive...
 
 Checking Viewers...
 ..Genesis Present..
-..Executing, Don't Close..
+..Executing Genesis..
+(Don't Close This Window)
 ..Genesis Exited
 
 Checking Explorer..
-..Explorer Closed.
+..No Explorers Open.
 
 UnMounting RamDrive..
 ..RamDrive UnMounted..
-
-Re-Opening Explorer..
-..Explorer Opened.
 
 
 ...Processes Complete.
