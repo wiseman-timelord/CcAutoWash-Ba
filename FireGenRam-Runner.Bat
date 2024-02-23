@@ -36,7 +36,7 @@ if exist ".\GenesisViewer.exe" (
     echo ..Executing Genesis..
 	echo ^(Don't Close This Window^)
     ".\GenesisViewer.exe"
-    echo ..Genesis Exited!
+    echo ..Genesis Exited.
     timeout /t 2 /nobreak > NUL
     echo.
 ) else (
@@ -45,7 +45,7 @@ if exist ".\GenesisViewer.exe" (
         echo ..Executing Firestorm..
 	    echo ^(Don't Close This Window^)
         ".\Firestorm-Releasex64.exe"
-		echo ..Firestorm Exited!
+		echo ..Firestorm Exited.
 		echo.
         timeout /t 2 /nobreak > NUL
 		goto unmount
