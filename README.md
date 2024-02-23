@@ -48,17 +48,22 @@ PRESS 'START CLEANING' BUTTON TO CLEAN ALL ACTIVE GAME PLUGINS
 (IF REQUIRED FILES ARE SET, IT WILL ENABLE ITSELF IN 3 SECONDS)
 -----
 ```
-- FireDriveRunner.Bat, Auto-mount/unmount application specific ramdrive...
+- `FireGenRam-Runner.Bat`, Auto-mount/unmount application specific ramdrive...
 ```
 
 Script Initialized...
 
 
-Mounting RAM Drive..
+Mounting RAM Drive...
 ..RAM Drive Mounted.
 
-Executing, Do Not Close..
-..Target Application Exited!
+Checking Viewers...
+..Genesis Present..
+..Executing, Don't Close..
+..Genesis Exited!
+
+Closing Explorer..
+..Explorer Closed.
 
 UnMounting RAM Drive..
 ..RAM Drive UnMounted.
