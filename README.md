@@ -59,14 +59,17 @@ Mounting RAM Drive...
 
 Checking Viewers...
 ..Genesis Present..
-..Executing, Don't Close..
-..Genesis Exited!
+..Executing, Don't Close
+..Genesis Exited
 
-Closing Explorer..
+Checking Explorer..
 ..Explorer Closed.
 
-UnMounting RAM Drive..
-..RAM Drive UnMounted.
+UnMounting RamDrive..
+..RamDrive UnMounted..
+
+Re-Opening Explorer..
+..Explorer Opened.
 
 
 ...Processes Complete.
