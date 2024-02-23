@@ -98,7 +98,7 @@ UnMounting RAM Drive..
 - There are no releases, because this project is, information and helper scripts, pick out from it what you, find useful and want to use.
 - Tried to do some complicated method of cleaning stats going through TEMP/TMP path, as no way of knowing pre-defined RamDisk letter, but, ran into path lengh issues, so kept it simple.
 - Again, if you want to create a shortcut to the batch, then have the shortcut on the taskbar, then you need to use cmd.exe /c "DRIVE:\LOCATION\BATCHFILE.BAT" in the target box of the shortcut.
-- For Second Life Viewers, I advise to use the maximum space (typically, 10GB or 10240MB) if you have enough RAM, for the RamDisk image, as, it will fill up fast and resizing later will likely erase cache.
+- For Second Life Viewers, I advise... 1) to use the maximum space (typically, 10GB or 10240MB) if you have enough RAM, for the RamDisk image, as resizing later will erase the cache. 2) Use the Hardware option of 512px textures on FireStorm, or it will fill up cache fast. 3) Ensure to have different drive images for different viewers, otherwise likely it will, have issues and erase your cache.
   
 ## DISCLAIMER
 This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
