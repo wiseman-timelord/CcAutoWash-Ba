@@ -50,6 +50,7 @@ PRESS 'START CLEANING' BUTTON TO CLEAN ALL ACTIVE GAME PLUGINS
 ```
 - `FireGenRam-Runner.Bat`, Auto-mount/unmount application specific ramdrive (in this case, Genesis and Firestorm, Viewer)...
 ```
+
 Script Initialized...
 
 
@@ -63,10 +64,13 @@ Checking Viewers...
 ..Genesis Exited
 
 Checking Explorer..
-..No Explorers Open.
+..Explorer Closed.
 
 UnMounting RamDrive..
 ..RamDrive UnMounted..
+
+Re-Opening Explorer..
+..Explorer Opened.
 
 
 ...Processes Complete.
