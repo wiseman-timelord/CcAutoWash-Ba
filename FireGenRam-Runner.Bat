@@ -41,7 +41,7 @@ if exist ".\GenesisViewer.exe" (
 ) else (
     if exist ".\Firestorm-Releasex64.exe" (
         echo ..Firestorm Present..
-        echo ..Executing, Don't Close!
+        echo ..Executing, Don't Close..
         ".\Firestorm-Releasex64.exe"
 		echo ..Firestorm Exited!
 		echo.
