@@ -1,11 +1,15 @@
 @echo off
 
+
 :: Initialization - Possibly Customize Title For Viewers Used
-mode 45,21
+setlocal enabledelayedexpansion
+mode 45,24
 color 80
 title FireGenRam-Runner
 cls
 cd /d "%~dp0"
+set "explorerWindowsOpen=0"
+set "explorerPath=C:\"
 echo.
 echo Script Initialized...
 echo.
@@ -15,7 +19,7 @@ timeout /t 1 /nobreak > NUL
 echo.
 echo Mounting RAM Drive...
 "C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /mount:S
-if "%ERRORLEVEL%"=="0" (
+if "!ERRORLEVEL!"=="0" (
     echo ..RAM Drive Mounted.
 ) else (
     echo ..Failed to Mount RAM Drive!
@@ -29,7 +33,7 @@ echo.
 echo Checking Viewers...
 if exist ".\GenesisViewer.exe" (
     echo ..Genesis Present..
-    echo ..Executing, Don't Close..
+    echo ..Executing, Don't Close!
     ".\GenesisViewer.exe"
     echo ..Genesis Exited!
     timeout /t 2 /nobreak > NUL
@@ -37,11 +41,12 @@ if exist ".\GenesisViewer.exe" (
 ) else (
     if exist ".\Firestorm-Releasex64.exe" (
         echo ..Firestorm Present..
-        echo ..Executing, Don't Close..
+        echo ..Executing, Don't Close!
         ".\Firestorm-Releasex64.exe"
-        echo ..Firestorm Exited!
+		echo ..Firestorm Exited!
+		echo.
         timeout /t 2 /nobreak > NUL
-        echo.
+		goto unmount
     ) else (
         echo ..Firestorm & Genesis, Missing!
         echo.
@@ -52,17 +57,30 @@ if exist ".\GenesisViewer.exe" (
 
 :: Unmount RAM Drive - Customize Line For RamDrive Software Used
 :unmount
-echo Closing Explorer..
-powershell -Command "Get-Process -Name explorer | Where-Object { $_.MainWindowHandle -ne 0 } | Stop-Process"
-echo ..Explorer Closed.
+echo Checking Explorer..
+for /f "delims=" %%i in ('powershell -Command "$shell = New-Object -ComObject shell.application; $shell.Windows() | Where-Object { $_.HWND -ne 0 -and $_.FullName -match 'explorer\.exe$' } | ForEach-Object { $location = ''; try { $location = $_.Document.Folder.Self.Path } catch {}; if ($location) { Write-Output $location; break; } }"') do set "explorerPath=%%i"
+if not "!explorerPath!"=="C:\" (
+    set "explorerWindowsOpen=1"
+    powershell -Command "Get-Process explorer | Where-Object { $_.MainWindowHandle -ne 0 } | ForEach-Object { Stop-Process -Id $_.Id }"
+    echo ..Explorer Closed.
+) else (
+    echo ..No Explorers Open.
+)
 echo.
-echo UnMounting RAM Drive..
+timeout /t 1 /nobreak > NUL
+echo UnMounting RamDrive..
 "C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /unmount:S
-if "%ERRORLEVEL%"=="0" (
-    echo ..RAM Drive UnMounted.
+if "!ERRORLEVEL!"=="0" (
+    echo ..RamDrive UnMounted..
 ) else (
     echo ..Failed To Unmount!
-    timeout /t 3 /nobreak > NUL
+)
+timeout /t 3 /nobreak > NUL
+if !explorerWindowsOpen! equ 1 (
+    echo.
+    echo Re-Opening Explorer..
+    powershell -Command "$path = '!explorerPath!'.Replace('file:///', '').Replace('/', '\'); $path = [System.Uri]::UnescapeDataString($path); if (Test-Path \"$path\") { Start-Process 'explorer.exe' -ArgumentList \"/n,/e,$path\" } else { Start-Process 'explorer.exe' }"
+    echo ..Explorer Opened.
 )
 echo.
 timeout /t 1 /nobreak > NUL
@@ -71,4 +89,5 @@ timeout /t 1 /nobreak > NUL
 echo.
 echo ...Processes Complete.
 timeout /t 5 /nobreak > NUL
+endlocal
 exit
