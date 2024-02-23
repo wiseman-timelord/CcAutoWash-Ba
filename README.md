@@ -95,7 +95,7 @@ UnMounting RAM Drive..
 - Application requiring, large and fast, cache.
 
 ### NOTATION
-- There are no 
+- There are no releases, because this project is, information and helper scripts, pick out from it what you, find useful and want to use.
 - Tried to do some complicated method of cleaning stats going through TEMP/TMP path, as no way of knowing pre-defined RamDisk letter, but, ran into path lengh issues, so kept it simple.
 - Again, if you want to create a shortcut to the batch, then have the shortcut on the taskbar, then you need to use cmd.exe /c "DRIVE:\LOCATION\BATCHFILE.BAT" in the target box of the shortcut.
   
