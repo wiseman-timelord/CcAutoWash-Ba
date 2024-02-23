@@ -88,15 +88,15 @@ UnMounting RAM Drive..
 3. Run script, drives mount, program runs, when exit, drives unmount.
 
 ### REQUIREMENTS (MODULAR)
-- CCleaner (64bit).
-- Batch file support.
+- CCleaner (64bit) - for the ramdrive boot maintenance.
+- Windows with, Scripting Host & Batch support, Enabled.
 - Temp/Tmp folders on a RamDisk loaded from image.
-- RamDisk software.
-- Programs non-native to Windows, that dont run well.
-- Application requiring large cache.
+- RamDisk software - [Free (omni-drive)](https://github.com/LTRData/ImDisk) or [Paid (multi-drive)](https://www.softperfect.com/products/ramdisk/) 
+- Application requiring, large and fast, cache.
 
 ### NOTATION
-- I tried to do some complicated method of stats going through TEMP/TMP path, as no way of knowing pre-defined RamDisk letter, but, ran into path lengh issues, so kept it simple.
+- There are no 
+- Tried to do some complicated method of cleaning stats going through TEMP/TMP path, as no way of knowing pre-defined RamDisk letter, but, ran into path lengh issues, so kept it simple.
 - Again, if you want to create a shortcut to the batch, then have the shortcut on the taskbar, then you need to use cmd.exe /c "DRIVE:\LOCATION\BATCHFILE.BAT" in the target box of the shortcut.
   
 ## DISCLAIMER
