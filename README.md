@@ -59,7 +59,7 @@ Mounting RAM Drive...
 
 Checking Viewers...
 ..Genesis Present..
-..Executing, Don't Close
+..Executing, Don't Close..
 ..Genesis Exited
 
 Checking Explorer..
