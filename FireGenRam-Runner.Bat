@@ -3,7 +3,7 @@
 
 :: Initialization - Possibly Customize Title For Viewers Used
 setlocal enabledelayedexpansion
-mode 45,24
+mode 45,25
 color 80
 title FireGenRam-Runner
 cls
@@ -33,7 +33,8 @@ echo.
 echo Checking Viewers...
 if exist ".\GenesisViewer.exe" (
     echo ..Genesis Present..
-    echo ..Executing, Don't Close!
+    echo ..Executing Genesis..
+	echo ^(Don't Close This Window^)
     ".\GenesisViewer.exe"
     echo ..Genesis Exited!
     timeout /t 2 /nobreak > NUL
@@ -41,7 +42,8 @@ if exist ".\GenesisViewer.exe" (
 ) else (
     if exist ".\Firestorm-Releasex64.exe" (
         echo ..Firestorm Present..
-        echo ..Executing, Don't Close..
+        echo ..Executing Firestorm..
+	    echo ^(Don't Close This Window^)
         ".\Firestorm-Releasex64.exe"
 		echo ..Firestorm Exited!
 		echo.
