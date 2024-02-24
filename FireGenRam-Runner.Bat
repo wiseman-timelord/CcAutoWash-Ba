@@ -3,7 +3,7 @@
 
 :: Initialization - Possibly Customize Title For Viewers Used
 setlocal enabledelayedexpansion
-mode 45,25
+mode 45,28
 color 80
 title FireGenRam-Runner
 cls
@@ -26,8 +26,16 @@ if "!ERRORLEVEL!"=="0" (
 	pause
     exit /b 1
 )
-timeout /t 1 /nobreak > NUL
 echo.
+timeout /t 1 /nobreak > NUL
+
+
+:: Grace Period - Fine How It Is, No Changes Needed
+echo Waiting 2 seconds...
+timeout /t 2 /nobreak > NUL
+echo ...Grace Period Over.
+echo.
+timeout /t 1 /nobreak > NUL
 
 :: Run Viewer - Customize Executables/Prints For Viewers Used
 echo Checking Viewers...
