@@ -1,21 +1,27 @@
 @echo off
+setlocal enabledelayedexpansion
 
 :: Initialization - Possibly Customize Title For Viewers Used
-setlocal enabledelayedexpansion
-mode 45,30
+mode 45,28
+echo.
+echo =============(FireGenRam-Runner)=============
+echo.
+echo Initializing script..
+timeout /t 1 /nobreak > NUL
+cd /d "%~dp0"
 color 80
 title FireGenRam-Runner
-cls
-cd /d "%~dp0"
 set "explorerWindowsOpen=0"
 set "explorerPath=C:\"
+echo ..Script Initialized..
 echo.
-echo Script Initialized...
+timeout /t 2 /nobreak > NUL
+cls
 echo.
-timeout /t 1 /nobreak > NUL
+echo =============(FireGenRam-Runner)=============
+echo.
 
 :: Mount RAM Drive - Customize Line For RamDrive Software Used
-echo.
 echo Mounting RAM Drive..
 "C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /mount:T
 if "!ERRORLEVEL!"=="0" (
@@ -42,16 +48,18 @@ echo Checking Viewers..
 if exist ".\GenesisViewer.exe" (
     echo ..Executing Genesis..
     ".\GenesisViewer.exe"
-    echo ..Genesis Exited.
-    timeout /t 2 /nobreak > NUL
+    echo ..Genesis Exited..
+	timeout /t 1 /nobreak > NUL
+	goto relog
+    
     echo.
 ) else (
     if exist ".\Firestorm-Releasex64.exe" (
         echo ..Executing Firestorm..
         ".\Firestorm-Releasex64.exe"
 		echo ..Firestorm Exited..
+		timeout /t 1 /nobreak > NUL
 		goto relog
-        timeout /t 2 /nobreak > NUL
     ) else (
         echo ..Firestorm & Genesis, Missing!
         echo.
@@ -104,8 +112,7 @@ echo.
 timeout /t 1 /nobreak > NUL
 
 :: Outro - Fine How It Is, No Changes Needed
-echo.
-echo ...Processes Complete.
+echo Complete, Exiting...
 timeout /t 5 /nobreak > NUL
 endlocal
 exit
