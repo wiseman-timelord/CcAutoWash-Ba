@@ -1,9 +1,8 @@
 @echo off
 
-
 :: Initialization - Possibly Customize Title For Viewers Used
 setlocal enabledelayedexpansion
-mode 45,28
+mode 45,30
 color 80
 title FireGenRam-Runner
 cls
@@ -17,8 +16,8 @@ timeout /t 1 /nobreak > NUL
 
 :: Mount RAM Drive - Customize Line For RamDrive Software Used
 echo.
-echo Mounting RAM Drive...
-"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /mount:S
+echo Mounting RAM Drive..
+"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /mount:T
 if "!ERRORLEVEL!"=="0" (
     echo ..RAM Drive Mounted.
 ) else (
@@ -31,42 +30,51 @@ timeout /t 1 /nobreak > NUL
 
 
 :: Grace Period - Fine How It Is, No Changes Needed
-echo Waiting 2 seconds...
+echo Waiting 2 seconds..
 timeout /t 2 /nobreak > NUL
-echo ...Grace Period Over.
+echo ..Grace Period Over.
 echo.
 timeout /t 1 /nobreak > NUL
 
-:: Run Viewer - Customize Executables/Prints For Viewers Used
-echo Checking Viewers...
+:: Run Viewer Loop - Customize Executables/Prints For Non-FS/Gen Viewers
+:launchViewer
+echo Checking Viewers..
 if exist ".\GenesisViewer.exe" (
-    echo ..Genesis Present..
     echo ..Executing Genesis..
-	echo ^(Don't Close This Window^)
     ".\GenesisViewer.exe"
     echo ..Genesis Exited.
     timeout /t 2 /nobreak > NUL
     echo.
 ) else (
     if exist ".\Firestorm-Releasex64.exe" (
-        echo ..Firestorm Present..
         echo ..Executing Firestorm..
-	    echo ^(Don't Close This Window^)
         ".\Firestorm-Releasex64.exe"
-		echo ..Firestorm Exited.
-		echo.
+		echo ..Firestorm Exited..
+		goto relog
         timeout /t 2 /nobreak > NUL
-		goto unmount
     ) else (
         echo ..Firestorm & Genesis, Missing!
         echo.
         timeout /t 3 /nobreak > NUL
-        goto unmount
+        goto 2ndGrace
     )
 )
 
+:: Ask Relog - Fine How It Is, No Changes Needed
+:relog 
+set /p "relog=..Are You Relogging YN? "
+if /i "%relog%"=="y" goto launchViewer
+echo.
+
+:: Grace Period - Fine How It Is, No Changes Needed
+:2ndGrace
+echo Waiting 2 seconds..
+timeout /t 2 /nobreak > NUL
+echo ..Grace Period Over.
+echo.
+timeout /t 1 /nobreak > NUL
+
 :: Unmount RAM Drive - Customize Line For RamDrive Software Used
-:unmount
 echo Checking Explorer..
 for /f "delims=" %%i in ('powershell -Command "$shell = New-Object -ComObject shell.application; $shell.Windows() | Where-Object { $_.HWND -ne 0 -and $_.FullName -match 'explorer\.exe$' } | ForEach-Object { $location = ''; try { $location = $_.Document.Folder.Self.Path } catch {}; if ($location) { Write-Output $location; break; } }"') do set "explorerPath=%%i"
 if not "!explorerPath!"=="C:\" (
@@ -79,7 +87,7 @@ if not "!explorerPath!"=="C:\" (
 echo.
 timeout /t 1 /nobreak > NUL
 echo UnMounting RamDrive..
-"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /unmount:S
+"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /unmount:T
 if "!ERRORLEVEL!"=="0" (
     echo ..RamDrive UnMounted..
 ) else (
