@@ -50,18 +50,22 @@ PRESS 'START CLEANING' BUTTON TO CLEAN ALL ACTIVE GAME PLUGINS
 ```
 - `FireGenRam-Runner.Bat` - Auto-mount/unmount ramdrive, run application (Genesis and Firestorm, Viewer), with compitence...
 ```
-
 Script Initialized...
 
 
-Mounting RAM Drive...
+Mounting RAM Drive..
 ..RAM Drive Mounted.
 
-Checking Viewers...
-..Genesis Present..
-..Executing Genesis..
-(Don't Close This Window)
-..Genesis Exited.
+Waiting 2 seconds..
+..Grace Period Over.
+
+Checking Viewers..
+..Executing Firestorm..
+..Firestorm Exited..
+..Are You Relogging YN? n
+
+Waiting 2 seconds..
+..Grace Period Over.
 
 Checking Explorer..
 ..Explorer Closed.
@@ -74,6 +78,7 @@ Re-Opening Explorer..
 
 
 ...Processes Complete.
+
 ```
 
 ## INSTRUCTION
