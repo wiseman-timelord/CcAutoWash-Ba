@@ -92,7 +92,7 @@ set retries=0
 set maxRetries=2
 
 :tryUnmount
-echo Unmounting RAM Drive, Attempt !retries!..
+echo Unmounting Ramdisk, Attempt !retries!..
 rem  enter your ram drive software line here 
 "C:\System Files\RAMDisk\ramdisk.exe" /unmount:U
 if "!ERRORLEVEL!"=="0" (
@@ -100,17 +100,17 @@ if "!ERRORLEVEL!"=="0" (
 ) else (
     if !retries! lss !maxRetries! (
         set /a retries+=1
-        echo ..Failed to unmount RAM Drive, retrying in 20 seconds..
+        echo ..Failed unmount, 20s retry..
         timeout /t 20 /nobreak > NUL
         goto tryUnmount
     ) else (
-        echo ..Failed to unmount RAM Drive after !retries! attempts, forcing unmount..
+        echo ..Failed !retries! attempts, forcing..
         rem  enter your ram drive software line here 
 		"C:\System Files\RAMDisk\ramdisk.exe" /forceunmount:U
         if "!ERRORLEVEL!"=="0" (
-            echo ..RAM Drive forcefully unmounted..
+            echo ..forcefully unmounted.
         ) else (
-            echo ..Failed to forcefully unmount RAM Drive!
+            echo ..Failed force unmount!
             pause
             exit /b 1
         )
