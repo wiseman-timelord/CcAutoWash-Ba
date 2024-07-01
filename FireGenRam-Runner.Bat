@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: Initialization - Possibly Customize Title For Viewers Used
-mode 45,28
+mode 45,25
 echo.
 echo =============(FireGenRam-Runner)=============
 echo.
@@ -23,7 +23,8 @@ echo.
 
 :: Mount RAM Drive - Customize Line For RamDrive Software Used
 echo Mounting RAM Drive..
-"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /mount:T
+rem  enter your ram drive software line here 
+"C:\System Files\RAMDisk\ramdisk.exe" /mount:U
 if "!ERRORLEVEL!"=="0" (
     echo ..RAM Drive Mounted.
 ) else (
@@ -31,15 +32,12 @@ if "!ERRORLEVEL!"=="0" (
 	pause
     exit /b 1
 )
-echo.
 timeout /t 1 /nobreak > NUL
-
 
 :: Grace Period - Fine How It Is, No Changes Needed
 echo Waiting 2 seconds..
 timeout /t 2 /nobreak > NUL
 echo ..Grace Period Over.
-echo.
 timeout /t 1 /nobreak > NUL
 
 :: Run Viewer Loop - Customize Executables/Prints For Non-FS/Gen Viewers
@@ -49,20 +47,17 @@ if exist ".\GenesisViewer.exe" (
     echo ..Executing Genesis..
     ".\GenesisViewer.exe"
     echo ..Genesis Exited..
-	timeout /t 1 /nobreak > NUL
-	goto relog
-    
-    echo.
+    timeout /t 1 /nobreak > NUL
+    goto relog
 ) else (
     if exist ".\Firestorm-Releasex64.exe" (
         echo ..Executing Firestorm..
         ".\Firestorm-Releasex64.exe"
-		echo ..Firestorm Exited..
-		timeout /t 1 /nobreak > NUL
-		goto relog
+        echo ..Firestorm Exited..
+        timeout /t 1 /nobreak > NUL
+        goto relog
     ) else (
         echo ..Firestorm & Genesis, Missing!
-        echo.
         timeout /t 3 /nobreak > NUL
         goto 2ndGrace
     )
@@ -72,17 +67,15 @@ if exist ".\GenesisViewer.exe" (
 :relog 
 set /p "relog=..Are You Relogging YN? "
 if /i "%relog%"=="y" goto launchViewer
-echo.
 
 :: Grace Period - Fine How It Is, No Changes Needed
 :2ndGrace
 echo Waiting 2 seconds..
 timeout /t 2 /nobreak > NUL
 echo ..Grace Period Over.
-echo.
 timeout /t 1 /nobreak > NUL
 
-:: Unmount RAM Drive - Customize Line For RamDrive Software Used
+:: Unmount RAM Drive - Enhanced Shutdown Code
 echo Checking Explorer..
 for /f "delims=" %%i in ('powershell -Command "$shell = New-Object -ComObject shell.application; $shell.Windows() | Where-Object { $_.HWND -ne 0 -and $_.FullName -match 'explorer\.exe$' } | ForEach-Object { $location = ''; try { $location = $_.Document.Folder.Self.Path } catch {}; if ($location) { Write-Output $location; break; } }"') do set "explorerPath=%%i"
 if not "!explorerPath!"=="C:\" (
@@ -92,27 +85,50 @@ if not "!explorerPath!"=="C:\" (
 ) else (
     echo ..No Explorers Open.
 )
-echo.
 timeout /t 1 /nobreak > NUL
-echo UnMounting RamDrive..
-"C:\Program Files\SoftPerf RAM Disk\ramdisk.exe" /unmount:T
+
+:unmountAttempt
+set retries=0
+set maxRetries=2
+
+:tryUnmount
+echo Unmounting RAM Drive, Attempt !retries!..
+rem  enter your ram drive software line here 
+"C:\System Files\RAMDisk\ramdisk.exe" /unmount:U
 if "!ERRORLEVEL!"=="0" (
-    echo ..RamDrive UnMounted..
+    echo ..RAM Drive Unmounted..
 ) else (
-    echo ..Failed To Unmount!
+    if !retries! lss !maxRetries! (
+        set /a retries+=1
+        echo ..Failed to unmount RAM Drive, retrying in 20 seconds..
+        timeout /t 20 /nobreak > NUL
+        goto tryUnmount
+    ) else (
+        echo ..Failed to unmount RAM Drive after !retries! attempts, forcing unmount..
+        rem  enter your ram drive software line here 
+		"C:\System Files\RAMDisk\ramdisk.exe" /forceunmount:U
+        if "!ERRORLEVEL!"=="0" (
+            echo ..RAM Drive forcefully unmounted..
+        ) else (
+            echo ..Failed to forcefully unmount RAM Drive!
+            pause
+            exit /b 1
+        )
+    )
 )
 timeout /t 3 /nobreak > NUL
+
 if !explorerWindowsOpen! equ 1 (
     echo.
     echo Re-Opening Explorer..
     powershell -Command "$path = '!explorerPath!'.Replace('file:///', '').Replace('/', '\'); $path = [System.Uri]::UnescapeDataString($path); if (Test-Path \"$path\") { Start-Process 'explorer.exe' -ArgumentList \"/n,/e,$path\" } else { Start-Process 'explorer.exe' }"
     echo ..Explorer Opened.
 )
-echo.
 timeout /t 1 /nobreak > NUL
 
 :: Outro - Fine How It Is, No Changes Needed
 echo Complete, Exiting...
+echo.
 timeout /t 5 /nobreak > NUL
 endlocal
 exit
