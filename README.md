@@ -1,7 +1,7 @@
 # RamDiskTempHelp
 
 ### STATUS.
-Working. Recently added a "Grace Period" after loading RamDisk to "FireGenRam-Runner", to ensure drive pops up before running target application.
+Working. Recently overhauled `RamDisk-SL-Runner`, much simpler now for customization of what is now 3 lines near top.
 
 ## DESCRIPTION
 Some scripts to assist with running Temp/Tmp directories from RamDisk on Windows, and some tips in the NOTATION below. 
