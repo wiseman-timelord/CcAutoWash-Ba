@@ -7,7 +7,7 @@ Working. Recently added a "Grace Period" after loading RamDisk to "FireGenRam-Ru
 Some scripts to assist with running Temp/Tmp directories from RamDisk on Windows, and some tips in the NOTATION below. 
 1. `CcAutoWash.Bat` - RamDisks will always be cut fine, as they need not eat system ram, obviously this is intended for people whom put their, TEMP and TMP, on a RamDisk loaded from image, and are intending to have their computer on for longer periods. To clean a ramdisk, this requires a certain delay after the user logon, in order to process the cleaning, yes I'm sure task manager can delay it, but, its good to have it a little longer and I want it running from the start menu, the start menu is the last location it checks, and the user is required to logon.
 2. `TempEnviRun.Bat` - There is apparently no general way to specify the cache location used by the libraries "GPT: Many Python libraries use the OS temporary dir for caching. This is often hardcoded into the library.", however, it is possible in an environment "GPT:  Set the TMPDIR, TEMP, or TMP environment variables within the activation script of the virtual environment. export TEMP=/path/to/your/temp", this would then point to a temp location on your SSD drive. Thus, with a little editing of `TempEnviRun.Bat`, you too can still do things like run PACT on your Fallout 4 mods.
-3. `FireGenRam-Runner.Bat` - This is for automatically mounting a ramdisk before executing a specified program in the same folder, then unmounting the image after, to free up the memory. The script is annotated as to what you might need to do in each section, additionally you may need another line to sync the data/image before the unmount if the program does not auto do this. This is intended for a, separate and possibly larger, ramdrive to the "System" one. A recent addition is to auto close/open the explorer window(s) open, this negates issues with failure to dismount, its better than forced dismount; If you do not have these issues, then rem/remove the relevant lines. For use with Second Life, I advise seeing `Notation` section for some more info. 
+3. `Ramdisk-SL-Runner.Bat` - This is for automatically mounting a ramdisk before executing a specified program in the same folder, then unmounting the image after, to free up the memory. The script has been updated, you need to edit the 3 lines in the `:: Customize for your own preference`. This is intended for a, separate and possibly larger, ramdrive to the "System" one. A recent addition is to auto close/open the explorer window(s) open, this negates issues with failure to dismount, its better than forced dismount; but I advise a `8192` ramdisk with the combined cache set to a total of `~8000MB`. I advise seeing `Notation` section for some more info. 
 4. Install [TetraCopy](https://www.codesector.com/teracopy), to copy files directly through memory instead of using cache, this means you can then copy data larger than the RamDrive between directories.
 5. Regardless of the software used, I had to keep the RamDisk under a certain size in order for Windows not to timeout on boot, even when loading images from mSATA, it was about 6144MB (4096 + 2048), 4096MB is a safe value, IDK largest the average user will typically need for Temp folder after installing TetraCopy, is the 2GB Graphics Driver installations. If you are looking for RamDisk software, then I can suggest [ImDisk](https://github.com/LTRData/ImDisk) for a free one limited to one drive, but the batch is setup for non-free [SoftPerfect RAM Disk](https://www.softperfect.com/products/ramdisk/) which can have multiple drives.
 
@@ -48,30 +48,28 @@ PRESS 'START CLEANING' BUTTON TO CLEAN ALL ACTIVE GAME PLUGINS
 (IF REQUIRED FILES ARE SET, IT WILL ENABLE ITSELF IN 3 SECONDS)
 -----
 ```
-- `FireGenRam-Runner.Bat` - Auto-mount/unmount ramdrive, run application (Genesis and Firestorm, Viewer), with compitence...
+- `Ramdisk-SL-Runner.Bat` - Auto-mount/unmount ramdrive, run application (Genesis and Firestorm, Viewer), with compitence...
 ```
-=============(FireGenRam-Runner)=============
+=============================================
+              RamDisk-SL-Runner
+=============================================
+
+Script Initialized.
 
 Mounting RAM Drive..
 ..RAM Drive Mounted.
-
-Waiting 2 seconds..
+Waiting 3 seconds..
 ..Grace Period Over.
-
-Checking Viewers..
-..Executing Firestorm..
-..Firestorm Exited..
+Checking Viewer..
+..Executing Viewer..
+..Viewer Exited..
 ..Are You Relogging YN? n
-
-Waiting 2 seconds..
+Waiting 3 seconds..
 ..Grace Period Over.
-
 Checking Explorer..
 ..Explorer Closed.
-
-UnMounting RamDrive..
-..RamDrive UnMounted..
-
+Unmounting RamDrive..
+..RamDrive Unmounted..
 Re-Opening Explorer..
 ..Explorer Opened.
 
